@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div id="heading">HAPPY BIRTHDAY LUCY!</div>
+	<style>
+		
+		#bday{
+			width: 1500px;
+			height: 800px;
+			background-image: url(scary.jpg);
+			background-size: cover;
+			background-repeat: norepeat;
+			background-position: center;
+		}
+
+		#heading{
+			font-size: 100px;
+			position: center;
+			color: mediumpurple ;
+		}
+
+	</style>
+
+	<div id="bday"></div>
+
+	<audio src="irish.mp3" id="irish"></audio>
+
+	<script type="text/javascript">
+		let bday = document.getElementById("bday")
+		let irish = document.getElementById("irish")
+		bday.addEventListener("click",function(){
+			// bday.scary.backgroundImage=url"(balloons.gif)"
+			irish.play()
+			console.log("hi")
+		})
+		
+
+	</script>
+
+</body>
+</html>

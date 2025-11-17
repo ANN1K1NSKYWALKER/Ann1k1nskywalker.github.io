@@ -30,7 +30,7 @@
             	background-color:black;
             	color:white;
             	font-family: 'Xtreem Medium', sans-serif;
-            	font-size:200px;
+            	font-size:100px;
             	text-align:center;
             }
 
@@ -43,20 +43,40 @@
             	
             }
 
-            .Skz{
+           /* .Skz{
             	width: 50vw;
             	height: 50vh;
             	text-align: center;
             	animation: skz 2s infinite linear;
+            }*/
+            #Vinyl{
+                text-align: center;
+                animation-name:spin;
+                animation-duration:5s;
+                animation-iteration-count: infinite;
+                position:absolute;
             }
+
+            @keyframes spin {
+                            0% {
+                                transform: rotate(0deg)
+                                }
+                            100% {
+                            transform: rotate(360deg)
+                                }
+                            }
+            
 
 </style>
 <body>
 
-<div id="heading">Annika's <span>W</span>ebsite</div>
-<div class="options"></div>
-<div id="Skz">
+<!-- <div id="Skz">
 	<img src="Skz.png">
-</div>
+</div> -->
+<audio id="audio_play">
+    <source src="67.mp3" type="audio/mpeg" />
+</audio>
+<div id="heading">Annika's <span><img id="Vinyl" src="vinyl.png" width="200px" height="auto" onClick="document.getElementById('audio_play').play(); return false;" /></span><span id="W"> W</span>ebsite</div>
+<div class="options"></div>
 </body>
 </html>

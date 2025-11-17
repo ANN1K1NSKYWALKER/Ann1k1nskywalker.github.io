@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Annika's Website!</title>
+
+</head>
+<style>
+	body{
+		background-color: black;
+	}
+	
+
+
+	    @font-face {
+                font-family: 'Xtreem Medium'; /* Choose a name for your font */
+                src: url('XtreemMedium_PERSONAL_USE.ttf') format('truetype'); /* Specify the path to your TTF file */
+                font-weight: normal; /* Optional: Define font weight */
+                font-style: normal; /* Optional: Define font style */
+            }
+
+            body {
+                font-family: 'Xtreem Medium', sans-serif; /* Apply the custom font to elements */
+            }
+
+            #heading{
+            	width:100%;
+            	height:250px;
+            	background-color:black;
+            	color:white;
+            	font-family: 'Xtreem Medium', sans-serif;
+            	font-size:100px;
+            	text-align:center;
+            }
+
+           /* span{
+            	 font-family: 'Xtreem Medium', sans-serif;
+            	 color:rgb(192, 29, 49);
+            }*/
+
+            .options{
+            	
+            }
+
+           /* .Skz{
+            	width: 50vw;
+            	height: 50vh;
+            	text-align: center;
+            	animation: skz 2s infinite linear;
+            }*/
+            #Vinyl{
+                text-align: center;
+                animation-name:spin;
+                animation-duration:5s;
+                animation-iteration-count: infinite;
+                position:relative;
+                margin-top: 10px;
+            }
+
+            @keyframes spin {
+                            0% {
+                                transform: rotate(0deg)
+                                }
+                            100% {
+                            transform: rotate(360deg)
+                                }
+                            }
+            }
+            
+            #wolf{
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+                margin-left: 50px;
+            }
+
+            #annika{
+                position: relative;
+                left:50px;
+            }
+
+             #website{
+                position: relative;
+                right:50px;
+            }
+            #W{
+                 font-family: 'Xtreem Medium', sans-serif;
+                 color:rgb(192, 29, 49);
+            }
+
+</style>
+<body>
+
+<!-- <div id="Skz">
+	<img src="Skz.png">
+</div> -->
+<audio id="audio_play">
+    <source src="67.mp3" type="audio/mpeg" />
+</audio>
+
+
+<div id="heading">
+
+    <span id="annika">Annika's </span>
+    <span>
+
+    <img id="Vinyl" src="vinyl.png" width="200px" height="auto" onClick="document.getElementById('audio_play').play(); return false;"/>
+</span>
+
+<span id="website">
+<span id="W">W</span><span>ebsite</span>
+
+</div>
+
+
+<div class="options"></div>
+<div id="projects">
+    <img src="https://i.pinimg.com/736x/8c/7e/c5/8c7ec536210fa8eedda865ae95185409.jpg" id="wolf">
+</div>
+</body>
+</html>
