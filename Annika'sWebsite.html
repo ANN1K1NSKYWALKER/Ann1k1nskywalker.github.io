@@ -67,12 +67,43 @@
                                 }
                             }
             
-            
+            image-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+
             #wolf{
                 width: 500;
                 height: 475px;
                 border-radius: 25px;
                 margin-left: 50px;
+            }
+
+            #wolf:hover{
+                animation-name: Projects2;
+                animation-duration: 3s;
+            }
+
+            @keyframes Projects2{
+                100%{transform: rotate(360deg);}
+            }
+
+            #dwaekki{
+                width: 500;
+                height: 475px;
+                border-radius: 25px;
+                margin-left: 100px;
+                position: relative;
+            }
+
+            #quokka{
+                width: 500;
+                height: 475px;
+                border-radius: 25px;
+                margin-left: 100px;
+                position: relative;
             }
 
             #annika{
@@ -114,9 +145,10 @@
 </div>
 
 
-<div class="options"></div>
-<div id="projects">
+<div class="options">
     <img src="https://i.pinimg.com/736x/44/c6/8e/44c68e9e5398f5d80f4b320dc73921e5.jpg" id="wolf">
+    <img src="https://i.pinimg.com/736x/58/d3/72/58d372344b087461e238d93c5a1dfd30.jpg" id="dwaekki">
+    <img src="https://i.pinimg.com/736x/58/22/dc/5822dc721758ffedccd3b24ef8d20074.jpg" id="quokka">
 </div>
 </body>
 </html>
