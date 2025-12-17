@@ -11,7 +11,9 @@
 		background-color: black;
 	}
 	
-
+    div{
+        background-size:cover;
+    }
 
 	    @font-face {
                 font-family: 'Xtreem Medium'; /* Choose a name for your font */
@@ -59,7 +61,6 @@
                 animation-duration:5s;
                 animation-iteration-count: infinite;
                 position:relative;
-                /*margin-top: 10px;*/
             }
 
             @keyframes spin {
@@ -71,34 +72,146 @@
                                 }
                             }
             
-            #cat{
-                width: 40;
-                height: 20;
-                position: relative;
-            }
 
 
             #wolf{
-                /*width: 500px;
-                height: 475px;*/
-                 width:250px;
-                height:400px;
-                background-size:contain;
+                 width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
                 display: inline-block;
-
                 border-radius: 25px;
-                margin-left: 25px;
-            transform: 3s;
-            background-image:url(https://i.pinimg.com/736x/44/c6/8e/44c68e9e5398f5d80f4b320dc73921e5.jpg);
+            transform: 5s;
+            background-image:url(wolf.png);
 
             }
 
             #wolf:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+                background-size:contain;
+                background-image:url(r.png);
+                animation-name: changeImage;
+                background-size:cover;
 
-                /*animation-name: Projects2;*/
-                animation-duration: 3s;
+            }
 
-                transition:3s;
+            @keyframes changeImage{
+                0%{
+                background-image:url(wolf.png);
+
+                }
+
+                70%{
+                background-image:url(wolf.png);
+
+                }
+
+                100%{
+                  background-image:url(r.png);
+
+                }
+            }
+
+
+            
+            #dwaekki{
+               width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(dwaekki.png);
+           
+
+            }
+
+            #dwaekki:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+                background-image:url(ferret.png);
+                animation-name: changeImage2;
+                background-size:cover;
+
+            }
+
+            @keyframes changeImage2{
+                0%{
+                background-image:url(dwaekki.png);
+
+                }
+
+                70%{
+                background-image:url(dwaekki.png);
+
+                }
+
+                100%{
+                  background-image:url(ferret.png);
+
+                }
+            }
+
+
+            
+            #quokka{
+                width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(quokka.png);
+
+            }
+
+            #quokka:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+               background-size:cover;
+                background-image:url(chick.png);
+                animation-name: changeImage3;
+            }
+
+            @keyframes changeImage3{
+                0%{
+                background-image:url(quokka.png);
+
+                }
+
+                70%{
+                background-image:url(quokka.png);
+
+                }
+
+                100%{
+                  background-image:url(chick.png);
+
+                }
+            }
+            
+
+            
+            #puppy{
+               width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(puppy.png);
+
+            }
+
+            #puppy:hover{
+                transition:5s;
                 transform: rotateY(180deg);
                 background-size:cover;
                 background-image:url(scary.jpg);
@@ -108,12 +221,12 @@
 
             @keyframes changeImage{
                 0%{
-                background-image:url(https://i.pinimg.com/736x/44/c6/8e/44c68e9e5398f5d80f4b320dc73921e5.jpg);
+                background-image:url(puppy.png);
 
                 }
 
                 70%{
-                background-image:url(https://i.pinimg.com/736x/44/c6/8e/44c68e9e5398f5d80f4b320dc73921e5.jpg);
+                background-image:url(puppy.png);
 
                 }
 
@@ -121,34 +234,6 @@
                   background-image:url(scary.jpg);
 
                 }
-            }
-
-            @keyframes Projects2{
-                100%{transform: rotate(360deg);}
-            }
-
-            #dwaekki{
-                width: 500;
-                height: 475px;
-                border-radius: 25px;
-                margin-left: 100px;
-                position: relative;
-            }
-
-            #quokka{
-                width: 500;
-                height: 475px;
-                border-radius: 25px;
-                margin-left: 100px;
-                position: relative;
-            }
-
-            #puppy{
-                width: 500;
-                height: 475px;
-                border-radius: 25px;
-                margin-left: 100px;
-                position: relative;
             }
 
             #annika{
@@ -165,22 +250,6 @@
                  color:rgb(192, 29, 49);
             }
 
-            #STAR1{
-                position: relative;
-                width: 100px;
-                height: 100px;
-                /*margin-left: 25px;*/
-                display: inline-block;
-            }
-
-            #STAR2{
-                                display: inline-block;
-
-                position: relative;
-                width: 100px;
-                height: 100px;
-                /*margin-left: 425px;*/
-            }
 
 </style>
 <body>
@@ -191,7 +260,7 @@
 </audio>
 
 <center>
-        <img src="1.gif" id="STAR1">
+       
 
 <div id="heading">
 
@@ -210,28 +279,25 @@
 </p>
 </div>
 
-<img src="2.gif" id="STAR2"> 
 
-</center>
-<!-- <div id="ket">
-    <img src="Untitled design.gif" id="cat">
-</div>
- -->
 <div class="options">
 
 <a href="Projects.html">
     <div id="wolf"></div>
-    <!-- <img src="https://i.pinimg.com/736x/44/c6/8e/44c68e9e5398f5d80f4b320dc73921e5.jpg" id="wolf"> -->
 </a>
 
     <a href="Journal.html">
-    <img src="https://i.pinimg.com/736x/b4/52/31/b45231205b856e8af88d98a3ffe601d7.jpg" id="dwaekki">
+    <div id="dwaekki"></div>
 
     </a>
 
-    <img src="https://i.pinimg.com/736x/58/22/dc/5822dc721758ffedccd3b24ef8d20074.jpg" id="quokka">
-    <img src="https://i.pinimg.com/736x/b6/5f/22/b65f22417b8f04141578fe4f5e6d51b3.jpg" id="puppy">
+    <div id="quokka"></div>
+
+    <div id="puppy"></div>
 </div>
+
+</center>
+
 
 </div>
 </body>
