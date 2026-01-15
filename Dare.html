@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dare!</title>
+
+	<style type="text/css">
+		#title{
+			font-size: 100px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div id="title">Your Dare Is...</div>
+	</center>
+
+	<script type="text/javascript">
+		
+		let Dare = ["Let someone email anything to a person of your choice.","Try to make one person in the group laugh as quickly as possible.","Imitate one person in the group and have everyone else guess.","Deliver a personalised poem to someone of your choice (it must rhyme).","Freestyle rap for 41 seconds.", "Share your search history.", "Talk in a British accent for 15 seconds.", "Do 15 pushups.", "Try to fit your fist in your mouth.", "Talk in gibberish for 20 seconds.", "Sing the American anthem loudly in a British accent.", "Deliver an emotional speech to a piece of furniture.", "Narrate the next round dramatically.", "Do your best celebrity impression and have people guess.", "Text/email someone random, 'I miss you honey.'", "Have the person of your choice give you a dare.", "Pretend to be a food critic and describe the worst food you've ever eaten as a top quality dish."]
+
+		document.addEventListener("click", function(){
+			let randomDare = Math.round(Math.random()*20)
+			console.log(randomDare)
+			alert(Dare[randomDare])
+		})
+
+
+	</script>
+</body>
+</html>
