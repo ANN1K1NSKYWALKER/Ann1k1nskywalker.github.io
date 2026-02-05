@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=sc, initial-scale=1.0">
-    <link rel="stylesheet" href="confetti.css">
+    <!-- <link rel="stylesheet" href="confetti.css"> -->
     <title>I Hate You</title>
     <style>
         .confetti{
     width: 10px;
-    height: 10px;
+    height: 50px;
+    display: inline-block;
     position:absolute;
+    animation-name: swing;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
         }
+
+        @keyframes swing {
+        from{
+            transform: rotate(-45deg)
+        }
+        to {
+            transform: rotate(45deg)
+        }
+        
+    }
     </style>
 </head>
 <body>
     <center>
     </center>
-    <script src="confetti.js">
+    <script>
+
+    let fallfactor = 0
         function makeConfetti(){
-    square = document.createElement("div")
-    square.classList.add("confetti")
-    l = Math.random()*100
-    t = Math.random()*100
-    r = Math.floor(Math.random()*255)
-    g = Math.floor(Math.random()*255)
-    b = Math.floor(Math.random()*255)
+        let square = document.createElement("div")
+        square.classList.add("confetti")
+    let l = Math.random()*100
+    let t = Math.random()*100
+    let r = Math.floor(Math.random()*255)
+    let g = Math.floor(Math.random()*255)
+    let b = Math.floor(Math.random()*255)
     square.style.backgroundColor = "rgb("+ r + "," + g + "," + b +")"
     square.style.left = l + "vw"
     square.style.top = t + "vh"
     document.body.appendChild(square)
+
+  function fall(){
+    let fallFactor = 10
+    square.style.top = parseInt(square.style.top) + fallFactor + "px"
+    console.log(square.style.top)
+    if (parseInt(square.style.top) > 1000){
+        square.style.top = "10px"
+    }
+  }
+
+  setInterval(fall, 300)
 }
 setInterval(makeConfetti,20)
     </script>
