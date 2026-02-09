@@ -37,8 +37,15 @@
 	</style>
 </head>
 <body>
+
+	<button id="btn">Drop Confetti</button>
+	<input type="color" name="" value="#00635D" id="colorPicker">
+	<input type="range" name="" min="1" max="10" step="1" id="slider">
 	<script>
 		let ted = ["#DCF763", "#435058", "#BFB7B6"]
+		let dropConfettiBtn = document.getElementById("btn")
+		let colorPicker = document.getElementById("colorPicker")
+		let slider = document.getElementById("slider")
 		
 		function makeConfetti() {
 			
@@ -57,7 +64,8 @@
 			let randomColorIndex = Math.floor(Math.random()*
 			ted.length)
 			console.log(randomColorIndex)
-			square.style.backgroundColor = ted[randomColorIndex]
+			// square.style.backgroundColor = ted[randomColorIndex]
+			square.style.backgroundColor = colorPicker.value
 
 			// square.style.backgroundColor = "rgb("+ r + "," + g + "," + b + ")"
 			square.style.top = Math.random() * 1000 + "px"
@@ -77,10 +85,16 @@
 			}
 			setInterval(fall, 100)
 		}
-		for (let i = 0; i<67; i++){
-			makeConfetti()
-		}
+		// for (let i = 0; i<67; i++){
+		// 	makeConfetti()
+		// }
 		// setInterval(makeConfetti, 500)
+
+		dropConfettiBtn.addEventListener("click", function() {
+			for(let i = 0; i < slider.value; i++) {
+				makeConfetti()
+			}
+		})
 	</script>
 </body>
 </html>
