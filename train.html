@@ -7,12 +7,14 @@
 
 	<style>
 
+
 		body{
 			background-image: url("heaven.png");
   			background-repeat: no-repeat;
  			background-attachment: fixed;
   			background-size: cover;
 		}
+
 
 		#train{
 			display: flex;
@@ -25,6 +27,8 @@
 			height: 80px;
 			text-align: center;
 			position: relative;
+			background-color: whitesmoke;
+			margin-top: 360px;
 		}
 		.cart:before {
 			content: "";
@@ -37,7 +41,19 @@
 			bottom: -15px;
 			left: 10px;
 			background-color: whitesmoke;
+			animation-name:spin;
+                animation-duration:5s;
+                animation-iteration-count: infinite;
 		}
+
+		 @keyframes spin {
+                            0% {
+                                transform: rotate(0deg)
+                                }
+                            100% {
+                            transform: rotate(360deg)
+                                }
+                            }
 
 		.cart:after{
 			content: "";
@@ -50,29 +66,98 @@
 			bottom: -15px;
 			left: 60px;
 			background-color: whitesmoke;
+			animation-name:spin2;
+            animation-duration:5s;
+            animation-iteration-count: infinite;
 		}
+
+		 @keyframes spin2 {
+                            0% {
+                                transform: rotate(0deg)
+                                }
+                            100% {
+                            transform: rotate(360deg)
+                                }
+                            }
 	</style>
 
 </head>
 <body>
 
 	<audio id="play">
-    <source src="heaven.mp3" type="audio/mpeg" />
+    <source src="life.mp3" type="audio/mpeg" />
 	</audio>
 
 	<input type="text" id="person">
+	<input type="color" value="burlywood" id="colorPicker">
 	<button id="add-person">Add Person!</button>
 	<button id="bye-person">Remove Last Person :(</button>
-	<button id="music" onClick="document.getElementById('play').play(); return false;"
+	<button id="music" 
 		>Start the Ride!</button>
 
 	<div id="train">
 
 	<script>
 
-		let people = ["a","b","c"]
+		let chae = {
+			name:"Chae Stone",
+			nickname:"the chaz man",
+			properties:"6 foot 8",
+			studentId:"c29cs1",
+			lucky_num:8,
+			fav_color:"burlywood",
+			fav_history_teacher:"Kevin Slick",
+			inspirational_quote:"I didn't choose the thug life, the thug life chose me",
+			favorite_food:"Fish with chocolate sauce",
+			life_story:"Uninteresting",
+			fav_doc_ID:"Carnival painting",
+			fav_web_page:"Chamber of Reflection",
+			fav_show: "Ted"
+		}
+
+		let lucy = {
+			name:"Lucy Mease",
+			nickname:"ginge",
+			properties:"3 foot 4",
+			studentId:"c29lm",
+			lucky_num:8,
+			fav_color:"dark white",
+			fav_history_teacher:"Sensei Roth",
+			inspirational_quote:"If you can't beat them, arrange for them to be beaten",
+			favorite_food:"Fih",
+			life_story:"I was born",
+			fav_doc_ID:"Carnival painting"
+		}
+
+		let sam = {
+			name:"Sam Sleeper",
+			nickname:"muel",
+			properties:"5 foot 7",
+			studentId:"c29ss",
+			lucky_num:8,
+			fav_color:"light black",
+			fav_history_teacher:"Kevin Slick",
+			inspirational_quote:"Avengers...assemble",
+			favorite_food:"Caccio e pepe",
+			life_story:"yeah",
+			fav_doc_ID:"Carnival painting"
+		}
+
+		console.log(chae.fav_color)
 		
+
+		// let people = ["Lucy","Chae","Sam"]
+		
+		let people = [chae, lucy, sam]
+		console.log(people)
+
 		let train = document.getElementById("train")
+
+		let playMusicBtn = document.getElementById("music")
+		playMusicBtn.addEventListener("click", function() {
+			document.getElementById('play').play(); 
+			return false;
+		})
 
 		function makeTrain() {
 			train.innerHTML=""
@@ -80,7 +165,8 @@
 				console.log(people[i])
 				//create new div
 				let cart = document.createElement("div")
-				cart.textContent = people[i]
+				cart.textContent = people[i].name
+				cart.style.backgroundColor = people[i].fav_color
 				// add a class
 				cart.classList.add("cart")
 				train.appendChild(cart)
@@ -91,9 +177,14 @@
 		let addPerson = document.getElementById("add-person")
 		addPerson.addEventListener("click", function(){
 			let personInput = document.getElementById("person")
+			let colorPicker = document.getElementById("colorPicker")
 			console.log(personInput.value)
 
-			people.push(personInput.value)
+			// people.push(personInput.value)
+			people.push({
+				name: personInput.value
+				fav_color: colorPicker.value
+			})
 			makeTrain()
 			console.log(people)
 		})
