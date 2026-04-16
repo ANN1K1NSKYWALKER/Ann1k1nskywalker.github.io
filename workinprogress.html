@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Annika's Website!</title>
+
+</head>
+<style>
+	body{
+		background-color: black;
+	}
+	
+    div{
+        background-size:cover;
+    }
+
+	    @font-face {
+                font-family: 'Xtreem Medium'; /* Choose a name for your font */
+                src: url('XtreemMedium_PERSONAL_USE.ttf') format('truetype'); /* Specify the path to your TTF file */
+                font-weight: normal; /* Optional: Define font weight */
+                font-style: normal; /* Optional: Define font style */
+            }
+
+            body {
+                font-family: 'Xtreem Medium', sans-serif; /* Apply the custom font to elements */
+            }
+
+            #heading{
+                display: inline-block;
+                position: fixed;
+                top:0px;
+            	width:80%;
+            	height:250px;
+            	color:white;
+            	font-family: 'Xtreem Medium', sans-serif;
+            	font-size:100px;
+            	text-align:center;
+            }
+
+           /* span{
+            	 font-family: 'Xtreem Medium', sans-serif;
+            	 color:rgb(192, 29, 49);
+            }*/
+
+            .options{
+            	
+            }
+
+           /* .Skz{
+            	width: 50vw;
+            	height: 50vh;
+            	text-align: center;
+            	animation: skz 2s infinite linear;
+            }*/
+            #Vinyl{
+                text-align: center;
+                animation-name:spin;
+                animation-duration:5s;
+                animation-iteration-count: infinite;
+                position:relative;
+            }
+
+            @keyframes spin {
+                            0% {
+                                transform: rotate(0deg)
+                                }
+                            100% {
+                            transform: rotate(360deg)
+                                }
+                            }
+            
+
+
+            /*#wolf{
+                 width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+            transform: 5s;
+            background-image:url(wolf.png);
+
+            }
+
+            #wolf:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+                background-size:contain;
+                background-image:url(r.png);
+                animation-name: changeImage;
+                background-size:cover;
+
+            }
+
+            @keyframes changeImage{
+                0%{
+                background-image:url(wolf.png);
+
+                }
+
+                70%{
+                background-image:url(wolf.png);
+
+                }
+
+                100%{
+                  background-image:url(r.png);
+
+                }
+            }
+
+
+            
+            #dwaekki{
+               width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(dwaekki.png);
+           
+
+            }
+
+            #dwaekki:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+                background-image:url(ferret.png);
+                animation-name: changeImage2;
+                background-size:cover;
+
+            }
+
+            @keyframes changeImage2{
+                0%{
+                background-image:url(dwaekki.png);
+
+                }
+
+                70%{
+                background-image:url(dwaekki.png);
+
+                }
+
+                100%{
+                  background-image:url(ferret.png);
+
+                }
+            }
+
+
+            
+            #quokka{
+                width:305px;
+                height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(quokka.png);
+
+            }
+
+            #quokka:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+               background-size:cover;
+                background-image:url(chick.png);
+                animation-name: changeImage3;
+            }
+
+            @keyframes changeImage3{
+                0%{
+                background-image:url(quokka.png);
+
+                }
+
+                70%{
+                background-image:url(quokka.png);
+
+                }
+
+                100%{
+                  background-image:url(chick.png);
+
+                }
+            }
+            
+
+            
+            /*#puppy{
+               width:305px;*/
+              /*  height:500px;
+                background-size:cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                border-radius: 25px;
+                margin-left: 25px;
+            transform: 5s;
+            background-image:url(puppy.png);
+
+            }
+
+            #puppy:hover{
+                transition:5s;
+                transform: rotateY(180deg);
+                background-size:cover;
+                background-image:url(fox.png);
+                animation-name: changeImage;
+
+            }
+
+            @keyframes changeImage{
+                0%{
+                background-image:url(puppy.png);
+
+                }
+
+                70%{
+                background-image:url(puppy.png);
+
+                }
+
+                100%{
+                  background-image:url(fox.png);
+
+                }
+            }*/
+
+            #annika{
+                position: relative;
+                left:50px;
+            }
+
+             #website{
+                position: relative;
+                right:50px;
+            }
+
+            #Vid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+*/
+
+</style>
+<body>
+ <video autoplay muted loop id="Vid">
+  <source src="Hollow.mp4" type="video/mp4">
+</video>
+
+
+<audio id="audio_play">
+    <source src="buns.mp3" type="audio/mpeg" />
+</audio>
+
+<div id="heading">
+
+<center>
+<p>
+    <span id="annika">Annika's </span>
+    <span>
+
+    <img id="Vinyl" src="vinyl.png" width="200px" height="auto" onClick="document.getElementById('audio_play').play(); return false;"/>
+</span>
+
+
+<span id="website">
+<span id="W">Website</span></span>
+</center>
+
+</p>
+</div>
+
+
+<div class="options">
+
+<div id="projects">Projects</div>
+
+
+<!-- <a href="Game!.html">
+    <div id="wolf"></div>
+</a>
+
+    <a href="Journal1.html">
+    <div id="dwaekki"></div>
+
+    </a>
+
+    <div id="quokka"></div>
+
+    <a href="ThankUChae.html">
+    <div id="puppy"></div>
+    </a> -->
+
+
+</div>
+</body>
+</html>
