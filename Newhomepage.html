@@ -33,7 +33,6 @@
                 top:0px;
             	width:80%;
             	height:250px;
-            	background-color:black;
             	color:white;
             	font-family: 'Xtreem Medium', sans-serif;
             	font-size:100px;
@@ -250,9 +249,22 @@
                  color:rgb(192, 29, 49);
             }
 
-
+            #Vid {
+        position: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+}
 </style>
 <body>
+
+    <video autoplay muted loop id="Vid">
+  <source src="Hollow.mp4" type="video/mp4">
+</video>
 
 
 <audio id="audio_play">

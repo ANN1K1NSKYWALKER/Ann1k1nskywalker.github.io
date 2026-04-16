@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Ket Pls</title>
+    <link rel="stylesheet" href="div.css">
+</head>
+<body>
+    <style>
+        #dividend{
+    position:relative;
+    top: 5vh;
+    margin: auto;
+    width: 10vw;
+    height: 10vh;
+    background-image: url(cat.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#shop1{
+    position: relative;
+    width: 15vw;
+    height: 10vh;
+}
+#shop1_2{
+    position: relative;
+    margin: auto;
+}
+    </style>
+    <center>
+        I have <span id="score">0</span> ket
+    <div id="dividend"></div>
+</center>
+    
+    <div id="shop1">
+        you have <span id="shop1_1">0</span> extra ket per click
+        <p></p>
+        ts lwk buns it  costs like 10 ket but that's inflation for u.
+        <p></p>
+        <button id="shop1_2">buy</button>
+        </div>
+    </div>
+    <script>
+        let div = document.getElementById("dividend")
+let score = document.getElementById("score")
+let shop1_1 = document.getElementById("shop1_1")
+let shop1_2 = document.getElementById("shop1_2")
+points = 0;
+extra = 1;
+function increaseScore(){
+    points = points + extra
+    console.log(points)
+    score.innerText = points
+}
+function buyExtra(){
+    if (points >= 9.5){
+        extra = extra + 1
+        points = points - 10
+        console.log(points)
+        console.log(extra)
+        shop1_1.innerText = (extra - 1)
+        score.innerText = points
+    }
+}
+
+div.addEventListener("click", increaseScore)
+shop1_2.addEventListener("click",buyExtra)
+    </script>
+</body>
+</html>

@@ -27,34 +27,32 @@
             }
 
             #heading{
-                                display: inline-block;
-
-                position: relative;
+                display: inline-block;
+                position: fixed;
                 top:0px;
             	width:80%;
             	height:250px;
-            	background-color:black;
             	color:white;
             	font-family: 'Xtreem Medium', sans-serif;
             	font-size:100px;
             	text-align:center;
             }
 
-           /* span{
+            span{
             	 font-family: 'Xtreem Medium', sans-serif;
             	 color:rgb(192, 29, 49);
-            }*/
+            }
 
             .options{
             	
             }
 
-           /* .Skz{
+            .Skz{
             	width: 50vw;
             	height: 50vh;
             	text-align: center;
             	animation: skz 2s infinite linear;
-            }*/
+            }
             #Vinyl{
                 text-align: center;
                 animation-name:spin;
@@ -197,9 +195,9 @@
             
 
             
-            #puppy{
-               width:305px;
-                height:500px;
+            /*#puppy{
+               width:305px;*/
+              /*  height:500px;
                 background-size:cover;
                 background-repeat: no-repeat;
                 display: inline-block;
@@ -234,7 +232,7 @@
                   background-image:url(fox.png);
 
                 }
-            }
+           
 
             #annika{
                 position: relative;
@@ -245,26 +243,29 @@
                 position: relative;
                 right:50px;
             }
-            #W{
-                 font-family: 'Xtreem Medium', sans-serif;
-                 color:rgb(192, 29, 49);
-            }
 
+            #Vid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+*/
 
 </style>
 <body>
+ <video autoplay muted loop id="Vid">
+  <source src="Hollow.mp4" type="video/mp4">
+</video>
 
 
 <audio id="audio_play">
     <source src="buns.mp3" type="audio/mpeg" />
 </audio>
 
-<center>
-       
-
 <div id="heading">
 
-
+<center>
 <p>
     <span id="annika">Annika's </span>
     <span>
@@ -274,13 +275,17 @@
 
 
 <span id="website">
-<span id="W">W</span><span>ebsite</span></span>
+<span id="W">Website</span></span>
+</center>
 
 </p>
 </div>
 
 
 <div class="options">
+
+<div id="projects">Projects</div>
+
 
 <a href="projectspage.html">
     <div id="wolf"></div>
@@ -296,9 +301,6 @@
     <a href="ThankUChae.html">
     <div id="puppy"></div>
     </a>
-</div>
-
-</center>
 
 
 </div>
