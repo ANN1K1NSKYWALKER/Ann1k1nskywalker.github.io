@@ -19,6 +19,13 @@
 		#train{
 			display: flex;
 			gap: 12px;
+			
+		}
+		#train.move {
+			animation-name: trainmove;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
 		}
 
 		.cart{
@@ -29,9 +36,10 @@
 			position: relative;
 			background-color: whitesmoke;
 			margin-top: 360px;
+			
 		}
 		.cart:before {
-			content: "";
+			content: "🛞";
 			width: 30px;
 			height: 30px;
 			border: 1px solid black;
@@ -56,7 +64,7 @@
                             }
 
 		.cart:after{
-			content: "";
+			content: "🛞";
 			width: 30px;
 			height: 30px;
 			border: 1px solid black;
@@ -79,6 +87,15 @@
                             transform: rotate(360deg)
                                 }
                             }
+          @keyframes trainmove {
+          	0% {
+          		transform: translate(-100%);
+
+          	}
+          	100% {
+          		transform: translate(100vw);
+          	}
+          }
 	</style>
 
 </head>
@@ -92,10 +109,9 @@
 	<input type="color" value="burlywood" id="colorPicker">
 	<button id="add-person">Add Person!</button>
 	<button id="bye-person">Remove Last Person :(</button>
-	<button id="music" 
-		>Start the Ride!</button>
+	<button id="music">Start the Ride!</button>
 
-	<div id="train">
+	<div id="train"><div>
 
 	<script>
 
@@ -180,7 +196,7 @@
 
 			// people.push(personInput.value)
 			people.push({
-				name: personInput.value
+				name: personInput.value,
 				fav_color: colorPicker.value
 			})
 			makeTrain()
@@ -196,6 +212,17 @@
 			makeTrain()
 			console.log(people)
 			})
+
+		let startRideBtn = document.getElementById("music")
+		startRideBtn.addEventListener("click", function () {
+			if (train.classList.contains("move")) {
+				train.classList.remove("move")
+				document.getElementById('play').pause(); 
+			} else {
+				train.classList.add("move")
+			}
+			
+		})
 
 	</script>
 </body>
