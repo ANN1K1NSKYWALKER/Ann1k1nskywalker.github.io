@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Bitcount+Grid+Single:wght@100..900&family=Chela+One&family=Libertinus+Keyboard&family=Neonderthaw&family=Playwrite+IE:wght@100..400&family=Rubik+Bubbles&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Crypt</title>
+	<style>
+		body{
+			background-image: url(space.jpg);
+		}
+		#home{
+			font-size: 60px;
+			color: whitesmoke;
+			 font-family: "Chela One", system-ui;
+  			font-weight: 400;
+  			font-style: normal;
+		}
+		#float{
+			background-image: url(am.png);
+			position: absolute;
+			top: 100px;
+			left:100px;
+			width: 100px;
+			height: 100px;
+			background-size: cover;
+    	background-repeat: norepeat;
+    /*animation-name: move*/
+    /*animation: moveRight 5s linear infinite;*/
+		}
+
+
+ /* @keyframes move {
+   from { left: -100px; } 
+  to { left: 100%; }
+  }
+
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }*/
+
+	</style>
+</head>
+<body>
+
+	 <center>
+        <span id="home">Welcome</span>
+    </center>
+    <audio loop src="amog.mp3" id="music"></audio>
+</audio>
+<a href="">
+<div id="float"></div>
+</a>
+<script>
+		let audio = document.getElementById("music");
+let home = document.getElementById("home")
+function click(){
+    home.textContent = 'Trick your friends'
+    audio.play();
+    console.log("10394")  
+    fuckYou()
+}
+function fuckYou(){
+	float.style.top = 300 + "px"
+
+	for( let i = 0; i<100; i++){
+		float.style.left = 100 + parseInt(i*10)+"px"
+	}
+}
+document.addEventListener("click", click)
+document.addEventListener("keypress", click)
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fih is Calling</title>
+	<style>
+		#phih{
+			height: 700px;
+			width: 350px;
+		}
+		body{
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<audio id="play">
+    <source src="ringphone.mp3" type="audio/mpeg" />
+	</audio>
+	<center>
+	<img id="phih" src="phone.png" onclick="showImage()"></img>
+	<img id= "fih" src="fih.png" style="display:none;" alt="Hidden Image"></img>
+	</center>
+	<script>
+	// 	phih = document.getElementById("phih")
+	// function showImage() {
+  	// 	phih.createDiv()
+	// }
+		let phone = document.getElementById("phih")
+		let playMusicBtn = document.getElementById("phih")
+		playMusicBtn.addEventListener("click", function() {
+			document.getElementById('play').play(); 
+			return false;
+		})
+	</script>
+</body>
+</html>
