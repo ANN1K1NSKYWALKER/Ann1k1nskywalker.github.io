@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Bitcount+Grid+Single:wght@100..900&family=Libertinus+Keyboard&family=Neonderthaw&family=Playwrite+IE:wght@100..400&family=Rubik+Bubbles&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Annika's Website!</title>
+</head>
+<style>
+
+.mouse {
+  position: fixed;
+  pointer-events: none; /* Crucial: allows clicks to pass through to elements underneath */
+  width: 50px;
+  height: 50px;
+  background-image: url('your-image.png');
+  background-size: contain;
+  transform: translate(-50%, -50%); /* Centers the image on the mouse point */
+  z-index: 9999;
+}
+
+	body{
+		background-color: black;
+    cursor: url('play.png') 16 16, auto;
+   { cursor: none; }
+}
+=======
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Annika's Website!</title>
@@ -10,6 +37,7 @@
 	body{
 		background-color: black;
 	}
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
 	
     div{
         background-size:cover;
@@ -35,7 +63,11 @@
             	height:250px;
             	color:white;
             	font-family: 'Xtreem Medium', sans-serif;
+<<<<<<< HEAD
+            	font-size:200px;
+=======
             	font-size:100px;
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
             	text-align:center;
             }
 
@@ -71,9 +103,22 @@
                                 }
                             }
             
+<<<<<<< HEAD
+            #Play{
+                background-image: url(Play.png);
+                width: 500px;
+                height: 500px;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+
+           /* #wolf{
+=======
 
 
             #wolf{
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
                  width:305px;
                 height:500px;
                 background-size:cover;
@@ -233,7 +278,11 @@
                   background-image:url(fox.png);
 
                 }
+<<<<<<< HEAD
+            }*/
+=======
             }
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
 
             #annika{
                 position: relative;
@@ -246,7 +295,11 @@
             }
             #W{
                  font-family: 'Xtreem Medium', sans-serif;
+<<<<<<< HEAD
+                 color:white;
+=======
                  color:rgb(192, 29, 49);
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
             }
 
             #Vid {
@@ -259,11 +312,78 @@
         min-height: 100%;
         z-index: -1;
 }
+<<<<<<< HEAD
+
+#Projects{
+    font-family: "Neonderthaw", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color:white;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+#Journal{
+    font-family: "Neonderthaw", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color:white;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+a:hover{
+  animation-name: hoverlink;
+  animation-duration:100s;
+}
+
+@keyframes hoverlink{
+  0%{text-decoration: underline;}
+}
+#profile{
+    background-image: url(profile.png);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    z-index: 2px;
+    text-decoration: none;
+}
+</style>
+<body>
+
+    <script>
+//         move = document.getElementById("mouse")
+
+// document.addEventListener("mousemove",function moveMouse(event){
+//     console.log(event.clientX, event.clientY)
+//     mouse.style.left = (event.clientX -50) + "px"
+//     mouse.style.top = (event.clientY -50) + "px"
+// })
+
+        const cursor = document.querySelector('.custom-cursor');
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+    </script>
+
+    <video autoplay muted loop id="Vid">
+  <source src="Sat.mp4" type="video/mp4">
+=======
 </style>
 <body>
 
     <video autoplay muted loop id="Vid">
   <source src="Hollow.mp4" type="video/mp4">
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
 </video>
 
 
@@ -273,7 +393,13 @@
 
 <center>
        
+<<<<<<< HEAD
+<a href="Journal1.html">
+    <div id="profile"></div>
+</a>
+=======
 
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
 <div id="heading">
 
 
@@ -290,11 +416,25 @@
 
 </p>
 </div>
+<<<<<<< HEAD
+<div id="mouse"></div>
+<center>
+
+<a href="projectspage.html">
+ <div id="Play"></div>
+</a>
+</center>
+
+<!-- <div class="options"> -->
+
+<!-- <a href="projectspage.html">
+=======
 
 
 <div class="options">
 
 <a href="projectspage.html">
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
     <div id="wolf"></div>
 </a>
 
@@ -307,6 +447,24 @@
 
     <a href="ThankUChae.html">
     <div id="puppy"></div>
+<<<<<<< HEAD
+    </a> -->
+
+<!-- <a href="projectspage.html">
+    <div id="Projects">Projects</div>
+
+<a href="Journal1.html"></a>
+    <div id="Journal">Journal</div>
+</a> -->
+
+
+<!-- </div> -->
+
+<!-- </center> -->
+
+
+<!-- </div> -->
+=======
     </a>
 </div>
 
@@ -314,5 +472,6 @@
 
 
 </div>
+>>>>>>> 0911d3693a9b1a6a796d1539e0af48d63205c84a
 </body>
 </html>
