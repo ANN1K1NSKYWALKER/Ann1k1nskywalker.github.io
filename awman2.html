@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double+Ink:wght@100..900&family=Bitcount+Grid+Single:wght@100..900&family=Libertinus+Keyboard&family=Playwrite+IE:wght@100..400&family=Rubik+Bubbles&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blocked</title>
+	<style>
+		body{
+			color: whitesmoke;
+			background-color: black;
+		}
+		button{
+			margin-top: 10px;
+			color: whitesmoke;
+			background-color: black;
+			font-family: "Iosevka Charon", monospace;
+  			font-weight: 400;
+  			font-style: normal;
+		}
+		.input{
+			margin-top: 10px;
+		}
+		#cloo{
+			margin-top: 5px;
+			font-family: "Iosevka Charon", monospace;
+  			font-weight: 400;
+  			font-style: normal;
+		}
+		p{
+			color: darkred;
+			font-family: "Iosevka Charon", monospace;
+  			font-weight: 400;
+  			font-style: normal;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<div class="game">
+
+		<div class="clues" id="cloo">
+		</div>
+
+	<div class="input">
+		<input type="text" maxlength="1" class="input" id="1" autocomplete="off">
+		<input type="text" maxlength="1" class="input" id="2" autocomplete="off">
+		<input type="text" maxlength="1" class="input" id="3" autocomplete="off">
+		<input type="text" maxlength="1" class="input" id="4" autocomplete="off">
+		<input type="text" maxlength="1" class="input" id="5" autocomplete="off">
+	</div>
+
+	<button onclick="checkPassword()">Submit Your Guess</button>
+
+	<div id="result"></div>
+	<a href="awmansafetyfirst.html">
+	<p>This website contains jumpscares. Click here for a jumpscare-free option.</p>
+	</a>
+</div>
+</center>
+<script>
+	const theClues = {
+		0: ["log base 38039 of 1 =","It looks like the number 0.", "Product of numbers on a roulette wheel.","When any number is divided by this number, the answer is undefined.", "How much wood would a woodchuck chuck if a woodchuck could chuck would."],
+		1: ["200_: A Space Odyssey.", "People often dispute whether it is a prime number.", "2 to the power of 234893.", "Its roman number is the first letter of Interstellar.","How many moons orbit Earth?"],
+		2: ["The only even prime number.","If there are three apples and you take away two, how many apples do you have?", "How many chromosomes make a chromosome pair?","10x10÷5÷10","What's 1+1? Hint: It's not window."],
+		3: ["Letters in the last name of a person whose favorite movie is The Grand Budapest Hotel", "How many primary colors are there?","How many sides does a triangle have?","If you pick any number, double it, add 6, divide it by 2, and subtract the original number, what do you get?","First odd prime number.","How many strikes before you're out?"],
+		4: ["Considered bad luck in several East Asian countries","Number of WDCs Max Verstappen has won as of May 5th, 2026", "_th of July", "Seasons in a year.", "Main points on a standard compass."],
+		5: ["Letters in the name of the movie Rocky","Number of Great Lakes in North America.","Number of Olympic rings.","Fifth number in the Fibonacci sequence.","How many boroughs are in NYC?"],
+		6: ["_7","3x3-3","Number of strings on a standard acoustic/electric guitar.","Atomic number of carbon.","How many sides does a hexagon have?"],
+		7: ["Lucy Mease's hear-me-out.","People might give you a devious look if you say this number along with 6","Letters in first word of Project Hail Mary.","Log base 2 of 49 =","How many continents in the world?"],
+		8: ["Number of SKZ members.", "Sum of digits in Mickey 17.","What is the only single digit number that is both a perfect cube and a power of two?","How many planets are there in our solar system?","Magic _-Ball"],
+		9: ["Why was 6 afraid of 7? Because 7 ate __.", "Square root of 3.", "3^2","Recognized planets in our solar system before 2006.","6 upside down"]
+	}
+
+	const jumpScares = [
+		"Cat.png",
+		"scare1.jpg",
+		"scare2.jpg",
+		"scare3.jpg"
+	];
+
+	const jumpSound = "jump.m4a";
+
+	let Password = [];
+
+	function initGame() {
+		Password = [];
+		const cloo = document.getElementById('cloo');
+		cloo.innerHTML= '';
+		document.getElementById('result').innerHTML='';
+		const inputs = document.querySelectorAll('input.input');
+		inputs.forEach(input => input.value = '');
+
+		for (let i=0; i<5; i++) {
+			const randomDigit = Math.floor(Math.random()*10);
+			Password.push(randomDigit);
+
+			const cluePool = theClues[randomDigit];
+			const randomClue = cluePool[Math.floor(Math.random()*cluePool.length)];
+
+			const clueElement = document.createElement('div');
+			clueElement.className = 'clue-item';
+			clueElement.innerHTML = `<strong>Digit ${i + 1}:</strong> ${randomClue}`;
+			cloo.appendChild(clueElement);
+			console.log("Password:",Password);
+		}
+	}
+
+	function checkPassword(){
+		const resultDiv = document.getElementById('result');
+		let userGuess = [];
+		for(let i = 1; i <= 5; i++){
+			const val = document.getElementById(`${i}`).value;
+			if (val === ''){
+				resultDiv.className = 'error';
+				resultDiv.innerText = "Fill in all 5 digits!";
+				return;
+			}
+			userGuess.push(parseInt(val,10));
+		}
+
+		function showJumpScare(){
+			const randomImage = 
+				jumpScares[Math.floor(Math.random() * jumpScares.length)];
+
+			document.body.innerHTML = `
+				<img
+				id="jumpscare"
+				src="${randomImage}"
+				style="
+				width:100vw;
+				height:100vh;
+				object-fit:cover;
+				cursor:pointer;
+				"
+				>
+			`
+		const audio = new Audio(jumpSound);
+		audio.play();
+
+		document
+			.getElementById("jumpscare")
+			.addEventListener("click", () => {
+				window.location.href="awman2.html"
+			});
+		}
+		let isCorrect = true;
+		for(let i = 0; i<5;i++){
+			if (userGuess[i] !== Password[i]){
+				isCorrect = false;
+				break;
+			}
+		}
+		if (isCorrect){
+			resultDiv.className = 'success';
+			window.location.href = "https://my.spline.design/gallery-EYDWw6WH3itb0cG5hOki0yFo/"
+		} else {
+			showJumpScare();
+		}
+	}
+	const inputs = document.querySelectorAll('input.input');
+	inputs.forEach((input, index) => {
+		input.addEventListener('input',(e) => {
+			if (e.target.value.length === 1 && index < inputs.length - 1){
+				inputs[index + 1].focus();
+			}
+		});
+		input.addEventListener('keydown', (e) => {
+			if (e.key != 'Backspace' && e.key !== 'Tab' && isNaN(e.key)){
+				e.preventDefault();
+			}
+		});
+	});
+
+	window.onload = initGame;
+	
+</script>
+</body>
+</html>
